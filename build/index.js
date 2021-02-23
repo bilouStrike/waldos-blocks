@@ -192,6 +192,140 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayLikeToArray.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+module.exports = _arrayLikeToArray;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithHoles.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+module.exports = _arrayWithHoles;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _iterableToArrayLimit(arr, i) {
+  if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+module.exports = _iterableToArrayLimit;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableRest.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableRest.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+module.exports = _nonIterableRest;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/slicedToArray.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/slicedToArray.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayWithHoles = __webpack_require__(/*! ./arrayWithHoles */ "./node_modules/@babel/runtime/helpers/arrayWithHoles.js");
+
+var iterableToArrayLimit = __webpack_require__(/*! ./iterableToArrayLimit */ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js");
+
+var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray */ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js");
+
+var nonIterableRest = __webpack_require__(/*! ./nonIterableRest */ "./node_modules/@babel/runtime/helpers/nonIterableRest.js");
+
+function _slicedToArray(arr, i) {
+  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
+}
+
+module.exports = _slicedToArray;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+}
+
+module.exports = _unsupportedIterableToArray;
+
+/***/ }),
+
 /***/ "./src/block-extensions/border-radius.js":
 /*!***********************************************!*\
   !*** ./src/block-extensions/border-radius.js ***!
@@ -1404,22 +1538,146 @@ function save(_ref) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Edit; });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/video-block/editor.scss");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/video-block/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
+
+var _wp$element = wp.element,
+    useState = _wp$element.useState,
+    useEffect = _wp$element.useEffect; //const { RichText } = wp.editor;
+
+var KEY = 'AIzaSyAL0Otj6cbv26GlgyZ5YL1EmRuzxdjxroo';
 function Edit(_ref) {
+  var _video_annotations$se;
+
   var attributes = _ref.attributes,
       setAttributes = _ref.setAttributes;
-  var title = attributes.title;
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h1", null, " ", title, " "), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    className: "video__block"
-  }, "Video content here"));
+
+  var _useState = useState(0),
+      _useState2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
+      selectedItem = _useState2[0],
+      setSelectedItem = _useState2[1];
+
+  var _useState3 = useState(''),
+      _useState4 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState3, 2),
+      description = _useState4[0],
+      setDescription = _useState4[1];
+
+  var outline_title = attributes.outline_title;
+  var video_annotations = [{
+    thumbnail: 'http://waldosfriends.local/wp-content/uploads/2021/02/photo-1532275672750-588761c76ae8-1.png',
+    title: 'Introduction to dog training 0',
+    src: 'https://www.youtube.com/embed/gqOrv5Se6BI'
+  }, {
+    thumbnail: 'http://waldosfriends.local/wp-content/uploads/2021/02/photo-1532275672750-588761c76ae8-1.png',
+    title: 'Do’s and dont’s - The Basics 01',
+    src: 'https://www.youtube.com/embed/F8sN7ijzozU'
+  }, {
+    thumbnail: 'http://waldosfriends.local/wp-content/uploads/2021/02/photo-1532275672750-588761c76ae8-1.png',
+    title: 'Introduction to dog training 02',
+    src: 'https://www.youtube.com/embed/gqOrv5Se6BI'
+  }, {
+    thumbnail: 'http://waldosfriends.local/wp-content/uploads/2021/02/photo-1532275672750-588761c76ae8-1.png',
+    title: 'Do’s and dont’s - The Basics 03',
+    src: 'https://www.youtube.com/embed/F8sN7ijzozU'
+  }, {
+    thumbnail: 'http://waldosfriends.local/wp-content/uploads/2021/02/photo-1532275672750-588761c76ae8-1.png',
+    title: 'Introduction to dog training 04',
+    src: 'https://www.youtube.com/embed/gqOrv5Se6BI'
+  }, {
+    thumbnail: 'http://waldosfriends.local/wp-content/uploads/2021/02/photo-1532275672750-588761c76ae8-1.png',
+    title: 'Do’s and dont’s - The Basics 05',
+    src: 'https://www.youtube.com/embed/F8sN7ijzozU'
+  }, {
+    thumbnail: 'http://waldosfriends.local/wp-content/uploads/2021/02/photo-1532275672750-588761c76ae8-1.png',
+    title: 'Introduction to dog training 06',
+    src: 'https://www.youtube.com/embed/gqOrv5Se6BI'
+  }, {
+    thumbnail: 'http://waldosfriends.local/wp-content/uploads/2021/02/photo-1532275672750-588761c76ae8-1.png',
+    title: 'Do’s and dont’s - The Basics 07',
+    src: 'https://www.youtube.com/embed/F8sN7ijzozU'
+  }];
+  var itemsList = [];
+  var start = selectedItem <= 4 ? 0 : selectedItem - 4;
+  var end = selectedItem <= 4 ? 5 : selectedItem + 1;
+
+  var _loop = function _loop(i) {
+    var _video_annotations$i, _video_annotations$i2;
+
+    itemsList.push(Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "video-block__playItem ".concat(selectedItem === i && 'video-block__playItem--active', " "),
+      onClick: function onClick() {
+        return setSelectedItem(i);
+      }
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("img", {
+      src: (_video_annotations$i = video_annotations[i]) === null || _video_annotations$i === void 0 ? void 0 : _video_annotations$i.thumbnail
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+      className: "video-block__description"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("h3", null, " ", (_video_annotations$i2 = video_annotations[i]) === null || _video_annotations$i2 === void 0 ? void 0 : _video_annotations$i2.title, " "), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("span", null, " 00:25 "))));
+  };
+
+  for (var i = start + 0; i < end; i++) {
+    _loop(i);
+  }
+
+  useEffect(function () {
+    fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=LrWe_VzegoM&key=".concat(KEY)).then(function (response) {
+      return response.json();
+    }).then(function (responseJson) {
+      return setDescription(responseJson.items[0].snippet.description);
+    }).catch(function (error) {
+      return console.log(error);
+    });
+  });
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    className: "video-block"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    className: "video-block__container"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    className: "video-block__player"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("iframe", {
+    src: (_video_annotations$se = video_annotations[selectedItem]) === null || _video_annotations$se === void 0 ? void 0 : _video_annotations$se.src,
+    frameborder: "0",
+    height: "480"
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    className: "video-block__playlist"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("h2", null, "Video outline"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    className: "video-block__itemsList"
+  }, selectedItem > 4 && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
+    onClick: function onClick() {
+      return setSelectedItem(selectedItem - 1);
+    }
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("svg", {
+    width: "20",
+    height: "13",
+    viewBox: "0 0 20 13",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("path", {
+    d: "M9.22255 12.6703L0.321856 3.55299C-0.107286 3.11342 -0.107286 2.40036 0.321856 1.9608L1.36013 0.897302C1.78882 0.458205 2.48314 0.457736 2.91274 0.895425L9.99977 8.12127L17.0873 0.895893C17.5169 0.457735 18.2112 0.458674 18.6399 0.897769L19.6781 1.96126C20.1073 2.40083 20.1073 3.11389 19.6781 3.55346L10.777 12.6703C10.3478 13.1099 9.65169 13.1099 9.22255 12.6703Z",
+    fill: "#848484"
+  }))), itemsList, video_annotations.length - 1 != selectedItem && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("a", {
+    onClick: function onClick() {
+      return setSelectedItem(selectedItem + 1);
+    }
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("svg", {
+    width: "20",
+    height: "13",
+    viewBox: "0 0 20 13",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("path", {
+    d: "M9.22255 12.6703L0.321856 3.55299C-0.107286 3.11342 -0.107286 2.40036 0.321856 1.9608L1.36013 0.897302C1.78882 0.458205 2.48314 0.457736 2.91274 0.895425L9.99977 8.12127L17.0873 0.895893C17.5169 0.457735 18.2112 0.458674 18.6399 0.897769L19.6781 1.96126C20.1073 2.40083 20.1073 3.11389 19.6781 3.55346L10.777 12.6703C10.3478 13.1099 9.65169 13.1099 9.22255 12.6703Z",
+    fill: "#848484"
+  })))))));
 }
 
 /***/ }),
@@ -1460,7 +1718,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var name = 'waldos-blocks/video-block';
 var settings = {
-  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Vudeo Block", "video-block"),
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Video Block", "video-block"),
   description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Waldos Video block", "video-block"),
   category: "common",
   icon: "video",
@@ -1472,9 +1730,9 @@ var settings = {
       type: 'string',
       default: 'full'
     },
-    title: {
-      type: "string",
-      default: "Teaching fetch to your dog"
+    outline_title: {
+      type: 'string',
+      dedfault: 'Video outline'
     }
   },
   edit: _edit__WEBPACK_IMPORTED_MODULE_1__["default"],

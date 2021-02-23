@@ -12,7 +12,7 @@ export const name = 'waldos-blocks/video-block';
 
 export const settings = {
 
-	title: __("Vudeo Block", "video-block"),
+	title: __("Video Block", "video-block"),
 
 	description: __("Waldos Video block", "video-block"),
 
@@ -29,10 +29,10 @@ export const settings = {
             type: 'string',
             default: 'full'
         },
-		title: {
-			type: "string",
-			default: "Teaching fetch to your dog",
-		},
+		outline_title: {
+			type: 'string',
+			dedfault: 'Video outline'
+		}
 	},
 
 	edit: Edit,
