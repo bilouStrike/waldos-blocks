@@ -145,5 +145,24 @@
   margin: 0;
   color: #CCCCCC;
 }
+.block-editor-block-list__block .tabs-block {
+  background: #ffffff;
+  padding: 62px;
+}
+.block-editor-block-list__block .tabs-block__tabs-list {
+  padding: 0;
+  border-bottom: 1px solid #C4C4C4;
+}
+.block-editor-block-list__block .tabs-block__tabs-item {
+  list-style: none;
+  display: inline-block;
+  padding: 14px;
+  font-size: 24px;
+  color: #666666;
+}
+.block-editor-block-list__block .tabs-block__tabs-item--active {
+  border-bottom: 2px solid #0EB5C7;
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=index.css.map*/

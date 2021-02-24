@@ -10,8 +10,9 @@ import './block-extensions/';
 import * as first from "./first-block";
 import * as teamBlock from "./team-block";
 import * as videoBlock from "./video-block";
+import * as tabsBlock from './tabs-block';
 
-const blocks = [first, teamBlock, videoBlock];
+const blocks = [first, teamBlock, videoBlock, tabsBlock];
 
 function registerBlock(block) {
 	const { name, settings } = block;

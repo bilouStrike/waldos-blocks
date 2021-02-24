@@ -1201,6 +1201,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _first_block__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./first-block */ "./src/first-block/index.js");
 /* harmony import */ var _team_block__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./team-block */ "./src/team-block/index.js");
 /* harmony import */ var _video_block__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./video-block */ "./src/video-block/index.js");
+/* harmony import */ var _tabs_block__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tabs-block */ "./src/tabs-block/index.js");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -1211,7 +1212,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var blocks = [_first_block__WEBPACK_IMPORTED_MODULE_2__, _team_block__WEBPACK_IMPORTED_MODULE_3__, _video_block__WEBPACK_IMPORTED_MODULE_4__];
+
+var blocks = [_first_block__WEBPACK_IMPORTED_MODULE_2__, _team_block__WEBPACK_IMPORTED_MODULE_3__, _video_block__WEBPACK_IMPORTED_MODULE_4__, _tabs_block__WEBPACK_IMPORTED_MODULE_5__];
 
 function registerBlock(block) {
   var name = block.name,
@@ -1220,6 +1222,188 @@ function registerBlock(block) {
 }
 
 blocks.forEach(registerBlock);
+
+/***/ }),
+
+/***/ "./src/tabs-block/edit.js":
+/*!********************************!*\
+  !*** ./src/tabs-block/edit.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Edit; });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./editor.scss */ "./src/tabs-block/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabs */ "./src/tabs-block/tabs.js");
+
+
+
+function Edit(_ref) {
+  var attributes = _ref.attributes,
+      setAttributes = _ref.setAttributes;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_tabs__WEBPACK_IMPORTED_MODULE_2__["default"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    label: "Details"
+  }, "See ya later, ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("em", null, "Alligator"), "!"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    label: "Transcript"
+  }, "After 'while, ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("em", null, "Crocodile"), "!"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+    label: "About the author"
+  }, "Nothing to see here, this tab is ", Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("em", null, "extinct"), "!"));
+}
+
+/***/ }),
+
+/***/ "./src/tabs-block/editor.scss":
+/*!************************************!*\
+  !*** ./src/tabs-block/editor.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/tabs-block/index.js":
+/*!*********************************!*\
+  !*** ./src/tabs-block/index.js ***!
+  \*********************************/
+/*! exports provided: name, settings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "name", function() { return name; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "settings", function() { return settings; });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit */ "./src/tabs-block/edit.js");
+/**
+ * External dependencies
+ */
+
+/**
+ * Internal dependencies
+ */
+
+
+var name = 'waldos-blocks/tabs-block';
+var settings = {
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Tabs Block", "tabs-block"),
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])("Waldos Tabs block", "tabs-block"),
+  category: "common",
+  icon: "video",
+  supports: {
+    align: ['full']
+  },
+  attributes: {
+    align: {
+      type: 'string',
+      default: 'full'
+    }
+  },
+  edit: _edit__WEBPACK_IMPORTED_MODULE_1__["default"],
+  save: function save() {
+    return null;
+  }
+};
+
+/***/ }),
+
+/***/ "./src/tabs-block/tab.js":
+/*!*******************************!*\
+  !*** ./src/tabs-block/tab.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Tab = function Tab(props) {
+  var activeTab = props.activeTab,
+      onClickTab = props.onClickTab,
+      label = props.label;
+  var className = "tabs-block__tabs-item";
+
+  var onClick = function onClick() {
+    onClickTab(label);
+  };
+
+  if (activeTab === label) {
+    className += " tabs-block__tabs-item--active";
+  }
+
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("li", {
+    className: className,
+    onClick: onClick
+  }, label);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Tab);
+
+/***/ }),
+
+/***/ "./src/tabs-block/tabs.js":
+/*!********************************!*\
+  !*** ./src/tabs-block/tabs.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _tab__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tab */ "./src/tabs-block/tab.js");
+
+
+
+var useState = wp.element.useState;
+
+var Tabs = function Tabs(props) {
+  var _props$children$, _props$children$$prop;
+
+  var _useState = useState(props === null || props === void 0 ? void 0 : (_props$children$ = props.children[0]) === null || _props$children$ === void 0 ? void 0 : (_props$children$$prop = _props$children$.props) === null || _props$children$$prop === void 0 ? void 0 : _props$children$$prop.label),
+      _useState2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
+      activeTab = _useState2[0],
+      setActiveTab = _useState2[1];
+
+  var onClickTabItem = function onClickTabItem(tab) {
+    setActiveTab(tab);
+  };
+
+  var children = props.children;
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    className: "tabs-block"
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("ol", {
+    className: "tabs-block__tabs-list"
+  }, children === null || children === void 0 ? void 0 : children.map(function (child) {
+    var label = child.props.label;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_tab__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      activeTab: activeTab,
+      key: label,
+      label: label,
+      onClickTab: onClickTabItem
+    });
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+    className: "tabs-block__tabs-content"
+  }, children.map(function (child) {
+    if (child.props.label !== activeTab) return undefined;
+    return child.props.children;
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Tabs);
 
 /***/ }),
 

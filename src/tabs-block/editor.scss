@@ -1,0 +1,23 @@
+.block-editor-block-list__block {
+    .tabs-block {
+        background: #ffffff;
+        padding: 62px;
+        &__tabs-list {
+            padding: 0;
+            border-bottom: 1px solid #C4C4C4;
+        }
+
+        &__tabs-item {
+            list-style: none;
+            display: inline-block;
+            padding: 14px;
+            font-size: 24px;
+            color: #666666;
+
+            &--active {
+                border-bottom: 2px solid #0EB5C7;
+                font-weight: bold;            
+            }
+        }
+    }
+}
