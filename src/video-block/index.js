@@ -31,7 +31,15 @@ export const settings = {
         },
 		outline_title: {
 			type: 'string',
-			dedfault: 'Video outline'
+			default: 'Video outline'
+		},
+		video_url: {
+			type: 'string',
+			default: 'LrWe_VzegoM'
+		},
+		youtube_api_key: {
+			type: 'string',
+			default: 'AIzaSyAL0Otj6cbv26GlgyZ5YL1EmRuzxdjxroo'
 		}
 	},
 

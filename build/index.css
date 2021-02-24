@@ -99,6 +99,7 @@
 .block-editor-block-list__block .video-block__playlist {
   width: 32%;
   margin-left: 20px;
+  color: #ffffff;
 }
 .block-editor-block-list__block .video-block__playlist h2 {
   font-size: 24px;
