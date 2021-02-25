@@ -35,11 +35,11 @@ export const settings = {
 		},
 		video_url: {
 			type: 'string',
-			default: 'LrWe_VzegoM'
+			default: 'Youtube URL'
 		},
 		youtube_api_key: {
 			type: 'string',
-			default: 'AIzaSyAL0Otj6cbv26GlgyZ5YL1EmRuzxdjxroo'
+			default: 'Youtube API KEY'
 		}
 	},
 

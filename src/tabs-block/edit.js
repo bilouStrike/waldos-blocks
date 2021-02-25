@@ -5,7 +5,7 @@ import Author from '../components/author';
 
 export default function Edit({ attributes, setAttributes }) {
 
-    const { transcript, about_author } = attributes;
+    const { transcript } = attributes;
 
     const allowedBlocks = [
       'core/paragraph',

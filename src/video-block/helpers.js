@@ -1,4 +1,4 @@
-// Extract timestamps from  Youtube viddeo description
+// Extract timestamps from Youtube video description
 export const extractTime = (str) => {
     const regex = /^(\d+?:\d+?|\d+?:\d+?:\d+?)\s-\s(.*?)$/gsm;
     var match;
@@ -7,8 +7,8 @@ export const extractTime = (str) => {
         if (match.index === regex.lastIndex) {
             regex.lastIndex++;
         }
-        var time = match[1];
-        var description = match[2];
+        const time = match[1];
+        const description = match[2];
         matches.push({
           time,
           description

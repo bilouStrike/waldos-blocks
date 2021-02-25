@@ -1323,8 +1323,7 @@ __webpack_require__.r(__webpack_exports__);
 function Edit(_ref) {
   var attributes = _ref.attributes,
       setAttributes = _ref.setAttributes;
-  var transcript = attributes.transcript,
-      about_author = attributes.about_author;
+  var transcript = attributes.transcript;
   var allowedBlocks = ['core/paragraph', 'core/heading', 'core/list'];
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_tabs__WEBPACK_IMPORTED_MODULE_3__["default"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     label: "Details"
@@ -1430,21 +1429,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function save(_ref) {
-  var attributes = _ref.attributes;
-  var transcript = attributes.transcript,
-      about_author = attributes.about_author;
+function save() {
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     label: "Details"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"].Content, null)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    label: "Transcript"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
-    value: transcript
-  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
-    label: "About the author"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
-    value: about_author
-  })));
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["InnerBlocks"].Content, null)));
 }
 
 /***/ }),
@@ -1861,12 +1849,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/video-block/editor.scss");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _inspector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./inspector */ "./src/video-block/inspector.js");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./helpers */ "./src/video-block/helpers.js");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/video-block/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _inspector__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./inspector */ "./src/video-block/inspector.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./helpers */ "./src/video-block/helpers.js");
+
 
 
 
@@ -1876,7 +1867,6 @@ __webpack_require__.r(__webpack_exports__);
 var _wp$element = wp.element,
     useState = _wp$element.useState,
     useEffect = _wp$element.useEffect;
-var RichText = wp.editor.RichText;
 function Edit(props) {
   var _video_annotations$se;
 
@@ -1904,7 +1894,7 @@ function Edit(props) {
   var itemsList = [];
   var start = selectedItem <= 4 ? 0 : selectedItem - 4;
   var end = selectedItem <= 4 ? 5 : selectedItem + 1;
-  var videoId = Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["YouTubeGetID"])(video_url);
+  var videoId = Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["YouTubeGetID"])(video_url);
   var REMOTE_URL_CALL = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=".concat(videoId, "&key=").concat(youtube_api_key);
   useEffect(function () {
     fetch(REMOTE_URL_CALL).then(function (response) {
@@ -1918,7 +1908,7 @@ function Edit(props) {
       return console.log(error);
     });
   }, [video_url, youtube_api_key]);
-  var video_annotations = Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["extractTime"])(description);
+  var video_annotations = Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["extractTime"])(description);
 
   var _loop = function _loop(i) {
     var _thumbnails$default, _video_annotations$i, _video_annotations$i2;
@@ -1939,8 +1929,8 @@ function Edit(props) {
     _loop(i);
   }
 
-  var chapter_start = Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["extractTimeInSeconde"])((_video_annotations$se = video_annotations[selectedItem]) === null || _video_annotations$se === void 0 ? void 0 : _video_annotations$se.time);
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_inspector__WEBPACK_IMPORTED_MODULE_4__["default"], props), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
+  var chapter_start = Object(_helpers__WEBPACK_IMPORTED_MODULE_6__["extractTimeInSeconde"])((_video_annotations$se = video_annotations[selectedItem]) === null || _video_annotations$se === void 0 ? void 0 : _video_annotations$se.time);
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_inspector__WEBPACK_IMPORTED_MODULE_5__["default"], props), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "video-block"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "video-block__container"
@@ -1952,7 +1942,7 @@ function Edit(props) {
     height: "480"
   })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: "video-block__playlist"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("h2", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(RichText, {
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("h2", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["RichText"], {
     value: outline_title,
     onChange: function onChange(outline_title) {
       return setAttributes({
@@ -2015,7 +2005,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "extractTime", function() { return extractTime; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "extractTimeInSeconde", function() { return extractTimeInSeconde; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "YouTubeGetID", function() { return YouTubeGetID; });
-// Extract timestamps from  Youtube viddeo description
+// Extract timestamps from Youtube video description
 var extractTime = function extractTime(str) {
   var regex = /^([0-9]+?:[0-9]+?|[0-9]+?:[0-9]+?:[0-9]+?)[\t-\r \xA0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF]\x2D[\t-\r \xA0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF]([\s\S]*?)$/gm;
   var match;
@@ -2105,11 +2095,11 @@ var settings = {
     },
     video_url: {
       type: 'string',
-      default: 'LrWe_VzegoM'
+      default: 'Youtube URL'
     },
     youtube_api_key: {
       type: 'string',
-      default: 'AIzaSyAL0Otj6cbv26GlgyZ5YL1EmRuzxdjxroo'
+      default: 'Youtube API KEY'
     }
   },
   edit: _edit__WEBPACK_IMPORTED_MODULE_1__["default"],

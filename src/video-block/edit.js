@@ -1,5 +1,6 @@
-import { __ } from "@wordpress/i18n";
 import "./editor.scss";
+import { __ } from "@wordpress/i18n";
+import { RichText } from '@wordpress/block-editor';
 import Inspector from './inspector';
 import { 
     extractTime,
@@ -8,7 +9,6 @@ import {
 } from './helpers';
 
 const { useState, useEffect } = wp.element;
-const { RichText } = wp.editor;
 
 export default function Edit(props) {
     const { 
