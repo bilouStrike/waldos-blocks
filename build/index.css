@@ -146,8 +146,10 @@
   color: #CCCCCC;
 }
 .block-editor-block-list__block .tabs-block {
+  width: 1140px;
   background: #ffffff;
-  padding: 62px;
+  padding-right: 62px;
+  padding-left: 62px;
 }
 .block-editor-block-list__block .tabs-block__tabs-list {
   padding: 0;
@@ -161,8 +163,12 @@
   color: #666666;
 }
 .block-editor-block-list__block .tabs-block__tabs-item--active {
-  border-bottom: 2px solid #0EB5C7;
+  border-bottom: 3px solid #0EB5C7;
   font-weight: bold;
+}
+
+div[data-type="waldos-blocks/tabs-block"] > .wp-block .block-editor-block-list__layout .wp-block {
+  margin-left: 0;
 }
 
 /*# sourceMappingURL=index.css.map*/

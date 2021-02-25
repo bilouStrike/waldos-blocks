@@ -1,18 +1,31 @@
 import './editor.scss';
-
+import { RichText, InnerBlocks } from '@wordpress/block-editor';
 import Tabs from './tabs';
+import Author from '../components/author';
 
 export default function Edit({ attributes, setAttributes }) {
+
+    const { transcript, about_author } = attributes;
+
+    const allowedBlocks = [
+      'core/paragraph',
+      'core/heading',
+      'core/list'
+    ];
+
     return (
         <Tabs>
             <div label="Details">
-              See ya later, <em>Alligator</em>!
+              <InnerBlocks allowedBlocks={ allowedBlocks } />
             </div>
             <div label="Transcript">
-              After 'while, <em>Crocodile</em>!
+              <RichText 
+                value={transcript}
+                onChange={(transcript) => setAttributes({transcript})}
+              />
             </div>
             <div label="About the author">
-              Nothing to see here, this tab is <em>extinct</em>!
+              <Author />
             </div>
         </Tabs>
     );

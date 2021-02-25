@@ -7,7 +7,7 @@ import { __ } from "@wordpress/i18n";
  * Internal dependencies
  */
 import Edit from "./edit";
-
+import Save from './save';
 export const name = 'waldos-blocks/tabs-block';
 
 export const settings = {
@@ -28,10 +28,18 @@ export const settings = {
         align: {
             type: 'string',
             default: 'full'
-        }
+        },
+		transcript: {
+			type: 'string',
+            default: 'Transcript here'
+		},
+		about_author: {
+			type: 'string',
+            default: 'About the author'
+		}
 	},
 
 	edit: Edit,
 
-	save: () => null,
+	save: Save,
 };

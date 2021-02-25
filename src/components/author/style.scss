@@ -1,0 +1,32 @@
+.block-editor-block-list__block {
+    .waldos-friends-author {
+        display: flex;
+        img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+        }
+
+        &__description {
+            display: flex;
+            flex-direction: column;
+            margin-left: 16px;
+            
+            & h3 {
+                padding: 0px;
+                margin: 0px;
+                font-size: 24px;
+                color: #313131;
+                font-weight: 600;
+            }
+
+            & p {
+                padding: 0px;
+                margin: 0px;
+                font-size: 18px;
+                color: #313131;
+                font-weight: 400;
+            }
+        }
+    }
+}
