@@ -3,9 +3,14 @@ import { RichText, InnerBlocks } from '@wordpress/block-editor';
 import Tabs from './tabs';
 import Author from '../components/author';
 
-export default function Edit({ attributes, setAttributes }) {
+export default function Edit(props) {
 
-    const { transcript } = attributes;
+    const { 
+      attributes : { 
+        transcript
+      },
+      setAttributes
+    } = props;
 
     const allowedBlocks = [
       'core/paragraph',
@@ -25,7 +30,7 @@ export default function Edit({ attributes, setAttributes }) {
               />
             </div>
             <div label="About the author">
-              <Author />
+              <Author {...props}/>
             </div>
         </Tabs>
     );

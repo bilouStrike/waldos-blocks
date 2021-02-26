@@ -33,9 +33,17 @@ export const settings = {
 			type: 'string',
             default: 'Transcript here'
 		},
-		about_author: {
+		author_name: {
 			type: 'string',
-            default: 'About the author'
+            default: 'Author name'
+		},
+		author_description: {
+			type: 'string',
+            default: 'Author description'
+		},
+		author_img: {
+			type: 'string',
+            default: null
 		}
 	},
 
